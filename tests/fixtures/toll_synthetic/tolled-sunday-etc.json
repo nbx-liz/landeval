@@ -1,0 +1,70 @@
+{
+  "case": "tolled-sunday-etc",
+  "question": "a holiday amount with a pass declared",
+  "field_mask": "routes.duration,routes.distanceMeters,routes.travelAdvisory.tollInfo,routes.legs.travelAdvisory.tollInfo",
+  "request": {
+    "origin": {
+      "location": {
+        "latLng": {
+          "latitude": 35.2,
+          "longitude": 139.9
+        }
+      }
+    },
+    "destination": {
+      "location": {
+        "latLng": {
+          "latitude": 35.6,
+          "longitude": 139.7
+        }
+      }
+    },
+    "travelMode": "DRIVE",
+    "routingPreference": "TRAFFIC_AWARE",
+    "departureTime": "2030-01-04T08:00:00+09:00",
+    "routeModifiers": {
+      "vehicleInfo": {
+        "emissionType": "GASOLINE"
+      },
+      "tollPasses": [
+        "JP_ETC"
+      ]
+    },
+    "extraComputations": [
+      "TOLLS"
+    ]
+  },
+  "status": 200,
+  "response": {
+    "routes": [
+      {
+        "legs": [
+          {
+            "travelAdvisory": {
+              "tollInfo": {
+                "estimatedPrice": [
+                  {
+                    "currencyCode": "JPY",
+                    "units": "1200"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "distanceMeters": 40000,
+        "duration": "2400s",
+        "travelAdvisory": {
+          "tollInfo": {
+            "estimatedPrice": [
+              {
+                "currencyCode": "JPY",
+                "units": "1200"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

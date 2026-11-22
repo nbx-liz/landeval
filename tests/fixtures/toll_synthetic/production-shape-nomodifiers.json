@@ -1,0 +1,35 @@
+{
+  "case": "production-shape-nomodifiers",
+  "question": "whether the default shape routes identically to a tolled one",
+  "field_mask": "routes.duration,routes.distanceMeters",
+  "request": {
+    "origin": {
+      "location": {
+        "latLng": {
+          "latitude": 35.2,
+          "longitude": 139.9
+        }
+      }
+    },
+    "destination": {
+      "location": {
+        "latLng": {
+          "latitude": 35.6,
+          "longitude": 139.7
+        }
+      }
+    },
+    "travelMode": "DRIVE",
+    "routingPreference": "TRAFFIC_AWARE",
+    "departureTime": "2030-01-04T08:00:00+09:00"
+  },
+  "status": 200,
+  "response": {
+    "routes": [
+      {
+        "distanceMeters": 40000,
+        "duration": "3000s"
+      }
+    ]
+  }
+}

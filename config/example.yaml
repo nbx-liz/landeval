@@ -1,0 +1,75 @@
+# Example configuration for landeval. Copy it and edit it; every value below is a synthetic
+# placeholder chosen for illustration, not a recommendation.
+#
+# The file is validated by landeval.config.load_config: unknown keys are rejected, every
+# schedule states its direction, and exactly one destination group is used for screening.
+#
+# Destinations are public landmarks (major railway stations). Coordinates are given as
+# latitude and longitude in degrees, inside Japan.
+
+origin_grid:
+  mesh_size_m: 500
+  bbox_source: freeflow_minutes
+  # Candidate cells are kept when the free-flow drive to the screening destination is at most
+  # this many minutes.
+  freeflow_minutes: 60
+
+# Toll declarations, read only when a script is asked to measure tolls. `toll_passes: []`
+# states that the driver has no pass; leaving the key out is not the same thing.
+vehicle:
+  toll_passes: []
+  emission_type: HYBRID
+
+# The part of the country a run covers: two-digit prefecture codes with their names, and a
+# bounding box as (lon_min, lat_min, lon_max, lat_max).
+region:
+  prefectures:
+    "21": Gifu
+    "23": Aichi
+    "24": Mie
+  bbox: [136.2, 34.5, 137.6, 35.6]
+
+# Thresholds are display-time parameters; they are not baked into measured data. They must be
+# strictly increasing.
+thresholds:
+  commute:
+    target_schedule: morning_peak
+    good_max_min: 40
+    hard_max_min: 60
+    exclude_min: 80
+
+destinations:
+  work:
+    aggregate: single
+    used_for_screening: true
+    points:
+      # Nagoya Station
+      - {name: Nagoya Station, lat: 35.170915, lon: 136.881537}
+    schedules:
+      - {id: morning_peak, type: depart, time: "08:30", daytype: weekday, direction: outbound}
+      - {id: evening_return, type: depart, time: "18:30", daytype: weekday, direction: inbound}
+
+  leisure:
+    # Report each point, the mean and the farthest.
+    aggregate: [each, mean, max]
+    used_for_screening: false
+    points:
+      # Gifu Station
+      - {name: Gifu Station, lat: 35.409742, lon: 136.756272}
+      # Tsu Station
+      - {name: Tsu Station, lat: 34.711530, lon: 136.514397}
+    schedules:
+      - {id: leisure_out, type: depart, time: "09:00", daytype: weekend, direction: outbound}
+      - {id: leisure_back, type: depart, time: "17:00", daytype: weekend, direction: inbound}
+
+  errands:
+    # Only the nearer of the two is reported.
+    aggregate: min
+    used_for_screening: false
+    points:
+      # Toyohashi Station
+      - {name: Toyohashi Station, lat: 34.762542, lon: 137.382011}
+      # Okazaki Station
+      - {name: Okazaki Station, lat: 34.969628, lon: 137.162347}
+    schedules:
+      - {id: errands_out, type: depart, time: "10:00", daytype: weekend, direction: outbound}

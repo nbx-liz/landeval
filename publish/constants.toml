@@ -1,0 +1,915 @@
+# Inventory of every constant and default value in the public landeval modules
+# `tests/test_constants_inventory.py` compares the keys with
+# what it finds in src/landeval in both directions.
+#
+# class = "general": a unit, a standard, an API value, a vocabulary or a method
+# choice. A value set from the caller's own measurements or judgement is class
+# "personal" and does not belong on the public side: the test refuses it.
+
+["landeval.admin:CITY_COLUMN"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:CODE_COLUMN"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:COUNTY_COLUMN"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:PREFECTURE_SUFFIX"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:PREF_COLUMN"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:WARD_COLUMN"]
+class = "general"
+reason = "National Land Information administrative-boundary column name or label"
+
+["landeval.admin:WGS84"]
+class = "general"
+reason = "coordinate reference system name (standard)"
+
+["landeval.adopted:DEFAULT_INITIAL_GUESS_MIN"]
+class = "general"
+reason = "first guess of the arrival solver; not part of any result"
+
+["landeval.adoptedreport:ANCHOR_LABELS"]
+class = "general"
+reason = "display labels for the report"
+
+["landeval.adoptedreport:DAYTYPE_LABELS"]
+class = "general"
+reason = "display labels for the report"
+
+["landeval.adoptedreport:DIRECTION_LABELS"]
+class = "general"
+reason = "display labels for the report"
+
+["landeval.basedate:DEFAULT_MIN_LEAD_DAYS"]
+class = "general"
+reason = "lead time at which the Routes API answers from its historical model, an API behaviour"
+
+["landeval.basedate:DEFAULT_SEARCH_DAYS"]
+class = "general"
+reason = "search horizon that steps over the long public holidays"
+
+["landeval.basedate:JST"]
+class = "general"
+reason = "Japan Standard Time offset (standard)"
+
+["landeval.basedate:_SEASONAL_EXCLUSIONS"]
+class = "general"
+reason = "calendar of the Japanese long-holiday seasons (year end, Golden Week, Obon) that are excluded from base dates"
+
+["landeval.basedate:next_reference_datetime(min_lead_days)"]
+class = "general"
+reason = "lead time at which the Routes API answers from its historical model, an API behaviour"
+
+["landeval.basedate:next_reference_datetime(search_days)"]
+class = "general"
+reason = "search horizon that steps over the long public holidays"
+
+["landeval.basedate:reference_date(min_lead_days)"]
+class = "general"
+reason = "lead time at which the Routes API answers from its historical model, an API behaviour"
+
+["landeval.basedate:reference_date(search_days)"]
+class = "general"
+reason = "search horizon that steps over the long public holidays"
+
+["landeval.calibration:ABOVE_RANGE"]
+class = "general"
+reason = "output vocabulary of the range check"
+
+["landeval.calibration:BELOW_RANGE"]
+class = "general"
+reason = "output vocabulary of the range check"
+
+["landeval.calibration:Fit.osrm_for(sigma_margin)"]
+class = "general"
+reason = "zero margin means the point estimate"
+
+["landeval.calibration:INSIDE_RANGE"]
+class = "general"
+reason = "output vocabulary of the range check"
+
+["landeval.calibration:MIN_POINTS_PER_DIRECTION"]
+class = "general"
+reason = "fewest points for which a per-direction line fit is meaningful"
+
+["landeval.calibration:fit_directions(sectors)"]
+class = "general"
+reason = "number of bearing sectors; narrow enough that one corridor dominates"
+
+["landeval.config:JAPAN_LAT_RANGE"]
+class = "general"
+reason = "geographic extent of Japan"
+
+["landeval.config:JAPAN_LON_RANGE"]
+class = "general"
+reason = "geographic extent of Japan"
+
+["landeval.config:TIME_PATTERN"]
+class = "general"
+reason = "HH:MM time format"
+
+["landeval.freeflow:DEFAULT_MAX_SNAP_DISTANCE_M"]
+class = "general"
+reason = "distance beyond which a cell is not near any road (technical)"
+
+["landeval.freeflow:MAX_ROAD_SPEED_KMH"]
+class = "general"
+reason = "legal expressway speed ceiling; bounds a straight-line radius"
+
+["landeval.freeflow:RADIUS_MARGIN"]
+class = "general"
+reason = "geometric margin between straight-line and road distance"
+
+["landeval.freeflow:_KM_PER_DEG_LAT"]
+class = "general"
+reason = "physical constant: kilometres per degree of latitude"
+
+["landeval.freeflow:annotate(max_snap_distance_m)"]
+class = "general"
+reason = "distance beyond which a cell is not near any road (technical)"
+
+["landeval.freeflow:compute_freeflow(chunk_size)"]
+class = "general"
+reason = "request batch size against the OSRM URL limit"
+
+["landeval.geocode:ENDPOINT"]
+class = "general"
+reason = "GSI address search endpoint"
+
+["landeval.geocode:_CHOME_TOKEN"]
+class = "general"
+reason = "address-normalisation pattern of the Japanese address grammar (a vocabulary)"
+
+["landeval.geocode:_COORDINATE"]
+class = "general"
+reason = "input grammar of a decimal latitude,longitude pair"
+
+["landeval.geocode:_DIGIT_RUN"]
+class = "general"
+reason = "address-normalisation pattern of the Japanese address grammar (a vocabulary)"
+
+["landeval.geocode:_DROPPED_TOWN_DETAIL"]
+class = "general"
+reason = "address-normalisation pattern of the Japanese address grammar (a vocabulary)"
+
+["landeval.geocode:_FULL_WIDTH_DIGITS"]
+class = "general"
+reason = "Unicode full-width to ASCII digit mapping (a standard)"
+
+["landeval.geocode:_HYPHENS"]
+class = "general"
+reason = "Unicode hyphen-like code points (a standard)"
+
+["landeval.geocode:_KANJI_CHOME"]
+class = "general"
+reason = "address-normalisation pattern of the Japanese address grammar (a vocabulary)"
+
+["landeval.geocode:_KANJI_DIGITS"]
+class = "general"
+reason = "kanji numerals one to nine (a vocabulary)"
+
+["landeval.geocode:_KE_MORPHEME"]
+class = "general"
+reason = "address-normalisation pattern of the Japanese address grammar (a vocabulary)"
+
+["landeval.geocode:_POSTAL_PREFIX"]
+class = "general"
+reason = "Japanese postal code format (a standard)"
+
+["landeval.geocode:_WHITESPACE"]
+class = "general"
+reason = "Unicode whitespace including the ideographic space"
+
+["landeval.hazard:APPLIED_LAYERS_COLUMN"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:DEPTH_RANK_LOWER_M"]
+class = "general"
+reason = "lower bound of each national flood-depth rank (MLIT standard)"
+
+["landeval.hazard:HIT_WITHOUT_DEPTH"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:LANDSLIDE_SPECIAL_CODES"]
+class = "general"
+reason = "MLIT landslide special-zone codes (standard)"
+
+["landeval.hazard:NOT_DESIGNATED"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:NO_DATA"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:OUTSIDE"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:STATUS_SUFFIX"]
+class = "general"
+reason = "output vocabulary of the hazard table"
+
+["landeval.hazard:SUBGRID"]
+class = "general"
+reason = "5 x 5 sub-sampling of a 500 m cell, fixed by the stored 25-point format"
+
+["landeval.hazard:_ABOVE"]
+class = "general"
+reason = "parse pattern of the published hazard depth-class labels (API vocabulary)"
+
+["landeval.hazard:_APPLIED_SEPARATOR"]
+class = "general"
+reason = "separator of a stored column (storage format)"
+
+["landeval.hazard:_BELOW"]
+class = "general"
+reason = "parse pattern of the published hazard depth-class labels (API vocabulary)"
+
+["landeval.hazard:_BETWEEN"]
+class = "general"
+reason = "parse pattern of the published hazard depth-class labels (API vocabulary)"
+
+["landeval.hazard:_NUMBER"]
+class = "general"
+reason = "parse pattern of the published hazard depth-class labels (API vocabulary)"
+
+["landeval.hazard:subcell_lonlat(subgrid)"]
+class = "general"
+reason = "5 x 5 sub-sampling of a 500 m cell, fixed by the stored 25-point format"
+
+["landeval.hazard_overlay:CHUNK_SIZE"]
+class = "general"
+reason = "points per spatial-join batch (memory bound)"
+
+["landeval.hazard_overlay:LayerRun(archives)"]
+class = "general"
+reason = "zero counters and the print log sink"
+
+["landeval.hazard_overlay:LayerRun(features)"]
+class = "general"
+reason = "zero counters and the print log sink"
+
+["landeval.hazard_overlay:LayerRun(hits)"]
+class = "general"
+reason = "zero counters and the print log sink"
+
+["landeval.hazard_overlay:LayerRun(missing_depth)"]
+class = "general"
+reason = "zero counters and the print log sink"
+
+["landeval.hazard_overlay:OverlaySpec(depth_kind)"]
+class = "general"
+reason = "selects how a layer's depth attribute is read (none, rank code or range text); a method choice, not a measured value"
+
+["landeval.hazard_overlay:SPECS"]
+class = "general"
+reason = "the national hazard layers as published (MLIT names and attribute codes)"
+
+["landeval.hazard_overlay:run_layer(chunk_size)"]
+class = "general"
+reason = "points per spatial-join batch (memory bound)"
+
+["landeval.hazard_overlay:run_layer(log)"]
+class = "general"
+reason = "zero counters and the print log sink"
+
+["landeval.hazard_points:_M_PER_DEG_LAT"]
+class = "general"
+reason = "physical constant: metres per degree of latitude"
+
+["landeval.hazard_sources:MESH_CODE_PATTERN"]
+class = "general"
+reason = "mesh and prefecture code formats (standard)"
+
+["landeval.hazard_sources:PREF_CODE_PATTERN"]
+class = "general"
+reason = "mesh and prefecture code formats (standard)"
+
+["landeval.inland_flood:ABSENT"]
+class = "general"
+reason = "output vocabulary of the inland-flood table"
+
+["landeval.inland_flood:DEFAULT_DELAY_S"]
+class = "general"
+reason = "request spacing so as to stay polite to a public API"
+
+["landeval.inland_flood:DEFAULT_ZOOM"]
+class = "general"
+reason = "web-map tile size and the zoom at which the layer is published"
+
+["landeval.inland_flood:PRESENT"]
+class = "general"
+reason = "output vocabulary of the inland-flood table"
+
+["landeval.inland_flood:REQUIRED_COLUMNS"]
+class = "general"
+reason = "input column contract"
+
+["landeval.inland_flood:TILE_PIXELS"]
+class = "general"
+reason = "web-map tile size and the zoom at which the layer is published"
+
+["landeval.inland_flood:TILE_URL"]
+class = "general"
+reason = "GSI disaster-portal tile URL"
+
+["landeval.inland_flood:TileClient(delay_s)"]
+class = "general"
+reason = "request spacing so as to stay polite to a public API"
+
+["landeval.inland_flood:TileClient(timeout)"]
+class = "general"
+reason = "HTTP timeout"
+
+["landeval.inland_flood:TileClient(zoom)"]
+class = "general"
+reason = "web-map tile size and the zoom at which the layer is published"
+
+["landeval.inland_flood:_ABSENT_SUFFIX"]
+class = "general"
+reason = "file name or suffix of the cache storage format"
+
+["landeval.inland_flood:_ALPHA_CACHE_TILES"]
+class = "general"
+reason = "in-memory tile cache size; a performance setting that changes no result"
+
+["landeval.inland_flood:_CODE_LENGTH"]
+class = "general"
+reason = "length of the local government code (a standard)"
+
+["landeval.inland_flood:_MANIFEST_NAME"]
+class = "general"
+reason = "file name or suffix of the cache storage format"
+
+["landeval.inland_flood:_SHEET_PREFIX_SEPARATOR"]
+class = "general"
+reason = "separator of the published sheet id (API value)"
+
+["landeval.inland_flood:pixel_index(zoom)"]
+class = "general"
+reason = "web-map tile size and the zoom at which the layer is published"
+
+["landeval.inland_flood:tile_index(zoom)"]
+class = "general"
+reason = "web-map tile size and the zoom at which the layer is published"
+
+["landeval.interchange:_BUILD_ID"]
+class = "general"
+reason = "format of the build id the table builder writes (storage format)"
+
+["landeval.interchange:_INTERCHANGE"]
+class = "general"
+reason = "name pattern of the expressway junction vocabulary (IC, JCT, SA/PA, smart IC)"
+
+["landeval.interchange:_JUNCTION_ONLY"]
+class = "general"
+reason = "name pattern of the expressway junction vocabulary (IC, JCT, SA/PA, smart IC)"
+
+["landeval.interchange:_REST_AREA"]
+class = "general"
+reason = "name pattern of the expressway junction vocabulary (IC, JCT, SA/PA, smart IC)"
+
+["landeval.interchange:_SMART_ABBREVIATION"]
+class = "general"
+reason = "name pattern of the expressway junction vocabulary (IC, JCT, SA/PA, smart IC)"
+
+["landeval.interchange:_SMART_KATAKANA"]
+class = "general"
+reason = "name pattern of the expressway junction vocabulary (IC, JCT, SA/PA, smart IC)"
+
+["landeval.jshis:BASE_URL"]
+class = "general"
+reason = "J-SHIS API parameter value"
+
+["landeval.jshis:DEFAULT_DELAY_S"]
+class = "general"
+reason = "request spacing so as to stay polite to a public API"
+
+["landeval.jshis:DEFAULT_GROUND_EDITION"]
+class = "general"
+reason = "current published J-SHIS edition"
+
+["landeval.jshis:DEFAULT_HAZARD_EDITION"]
+class = "general"
+reason = "current published J-SHIS edition"
+
+["landeval.jshis:DEFAULT_TIMEOUT_S"]
+class = "general"
+reason = "HTTP timeout"
+
+["landeval.jshis:EPSG"]
+class = "general"
+reason = "J-SHIS API parameter value"
+
+["landeval.jshis:HAZARD_ATTRIBUTE"]
+class = "general"
+reason = "J-SHIS API parameter value"
+
+["landeval.jshis:HAZARD_CASE"]
+class = "general"
+reason = "J-SHIS API parameter value"
+
+["landeval.jshis:HAZARD_EQCODE"]
+class = "general"
+reason = "J-SHIS API parameter value"
+
+["landeval.jshis:JshisClient(delay_s)"]
+class = "general"
+reason = "request spacing so as to stay polite to a public API"
+
+["landeval.jshis:JshisClient(ground_edition)"]
+class = "general"
+reason = "current published J-SHIS edition"
+
+["landeval.jshis:JshisClient(hazard_edition)"]
+class = "general"
+reason = "current published J-SHIS edition"
+
+["landeval.measure:GROUP_COLUMN"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.measure:_CARRY_TYPES"]
+class = "general"
+reason = "dtype narrowing of the carried columns (storage format)"
+
+["landeval.measurements:BLOCK_KEY"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.measurements:DIRECTION_COLUMN"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.measurements:MUNICIPALITY_KEY"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.mesh:AREA_UNIT_KM2"]
+class = "general"
+reason = "unit conversion: exact area of one 2^-30 km2 sub-cell"
+
+["landeval.mesh:JAPAN_LAT_RANGE"]
+class = "general"
+reason = "geographic extent of Japan"
+
+["landeval.mesh:JAPAN_LON_RANGE"]
+class = "general"
+reason = "geographic extent of Japan"
+
+["landeval.mesh:SUPPORTED_250M_ROWS"]
+class = "general"
+reason = "derived from the JIS X0410 mesh grid over Japan"
+
+["landeval.mesh:WGS84"]
+class = "general"
+reason = "coordinate reference system name (standard)"
+
+["landeval.mesh:_CODE_LENGTH"]
+class = "general"
+reason = "JIS X 0410 standard grid-square definition"
+
+["landeval.mesh:_EPS"]
+class = "general"
+reason = "floating-point snapping tolerance; a numerical method choice"
+
+["landeval.mesh:_LENGTH_TO_SIZE"]
+class = "general"
+reason = "JIS X 0410 standard grid-square definition"
+
+["landeval.mesh:_PRIMARY_LAT_DEG"]
+class = "general"
+reason = "JIS X 0410 standard grid-square definition"
+
+["landeval.mesh:_SUBDIVISIONS"]
+class = "general"
+reason = "JIS X 0410 standard grid-square definition"
+
+["landeval.osrm:DEFAULT_BASE_URL"]
+class = "general"
+reason = "loopback address of a locally run OSRM server (public tool default)"
+
+["landeval.osrm:DEFAULT_CHUNK_SIZE"]
+class = "general"
+reason = "request batch size against the OSRM URL limit"
+
+["landeval.osrm:MAX_URL_LENGTH"]
+class = "general"
+reason = "OSRM request URL length limit"
+
+["landeval.osrm:NO_ROUTE_CODES"]
+class = "general"
+reason = "OSRM response vocabulary"
+
+["landeval.osrm:NO_ROUTE_STATUS"]
+class = "general"
+reason = "OSRM response vocabulary"
+
+["landeval.osrm:OsrmClient(base_url)"]
+class = "general"
+reason = "loopback address of a locally run OSRM server (public tool default)"
+
+["landeval.osrm:OsrmClient(timeout)"]
+class = "general"
+reason = "HTTP timeout for a large OSRM table request"
+
+["landeval.osrm:OsrmClient.table_to_destination(chunk_size)"]
+class = "general"
+reason = "request batch size against the OSRM URL limit"
+
+["landeval.provenance:BATCH_COLUMN"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:BATCH_KEY"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:FETCHED_AT_COLUMN"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:MEASUREMENT_TABLES"]
+class = "general"
+reason = "table names and keys of the storage format"
+
+["landeval.provenance:PROVENANCE_COLUMNS"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:SOURCE_CACHE_MTIME"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:SOURCE_RESPONSE"]
+class = "general"
+reason = "column name or key of the storage format"
+
+["landeval.provenance:_DIGEST_ALPHABET"]
+class = "general"
+reason = "cache file naming (storage format)"
+
+["landeval.provenance:_DIGEST_LENGTH"]
+class = "general"
+reason = "cache file naming (storage format)"
+
+["landeval.provenance:_KEY_COLUMNS"]
+class = "general"
+reason = "columns the cache key is rebuilt from (storage format)"
+
+["landeval.representatives:BASIS_CLEAR"]
+class = "general"
+reason = "output vocabulary of the representative choice"
+
+["landeval.representatives:BASIS_LEAST_HAZARD"]
+class = "general"
+reason = "output vocabulary of the representative choice"
+
+["landeval.representatives:DEFAULT_ADOPTED"]
+class = "general"
+reason = "every screening class calibration.classify_cells does not exclude"
+
+["landeval.representatives:REQUIRED_COLUMNS"]
+class = "general"
+reason = "input column contract"
+
+["landeval.representatives:choose_representatives(adopted)"]
+class = "general"
+reason = "every screening class calibration.classify_cells does not exclude"
+
+["landeval.representatives:choose_representatives(group_column)"]
+class = "general"
+reason = "default column name of the stored format"
+
+["landeval.representatives:choose_representatives(hazard_column)"]
+class = "general"
+reason = "default column name of the stored format"
+
+["landeval.representatives:choose_representatives(value_column)"]
+class = "general"
+reason = "default column name of the stored format"
+
+["landeval.routes:API_KEY_ENV"]
+class = "general"
+reason = "name of the environment variable the caller sets; read only by the script layer"
+
+["landeval.routes:DEFAULT_ARRIVAL_TOLERANCE_S"]
+class = "general"
+reason = "solver stopping tolerance for arrival-anchored queries, well inside the API's own spread"
+
+["landeval.routes:DEFAULT_INITIAL_GUESS"]
+class = "general"
+reason = "first guess of the arrival solver; not part of any result"
+
+["landeval.routes:DEFAULT_MAX_ARRIVAL_ITERATIONS"]
+class = "general"
+reason = "solver iteration cap for arrival-anchored queries"
+
+["landeval.routes:ENDPOINT"]
+class = "general"
+reason = "Google Routes API endpoint and field mask"
+
+["landeval.routes:FIELD_MASK"]
+class = "general"
+reason = "Google Routes API endpoint and field mask"
+
+["landeval.routes:RouteResult(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.routes:RoutesClient(arrival_tolerance_s)"]
+class = "general"
+reason = "solver stopping tolerance for arrival-anchored queries, well inside the API's own spread"
+
+["landeval.routes:RoutesClient(max_arrival_iterations)"]
+class = "general"
+reason = "solver iteration cap for arrival-anchored queries"
+
+["landeval.routes:RoutesClient(timeout)"]
+class = "general"
+reason = "HTTP timeout"
+
+["landeval.routes:RoutesClient._cache_path(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.routes:RoutesClient._post(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.routes:RoutesClient.route(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.routes:RoutesClient.route_for_arrival(initial_guess)"]
+class = "general"
+reason = "first guess of the arrival solver; not part of any result"
+
+["landeval.routes:RoutesClient.route_for_arrival(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.routes:_COORD_PRECISION"]
+class = "general"
+reason = "coordinate digits written into the request and cache key (API value, storage format)"
+
+["landeval.routes:cache_digest(shape)"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.sampling:DEFAULT_BEARING_SECTORS"]
+class = "general"
+reason = "number of bearing sectors; narrow enough that one corridor dominates"
+
+["landeval.sampling:MAX_EXTRA_SNAP_DISTANCE_M"]
+class = "general"
+reason = "ceiling on snap distance for extra calibration points (must sit on a road)"
+
+["landeval.sampling:assign_bins(sectors)"]
+class = "general"
+reason = "number of bearing sectors; narrow enough that one corridor dominates"
+
+["landeval.sampling:select_calibration_points(per_bin)"]
+class = "general"
+reason = "one calibration point per bin is the minimum sample"
+
+["landeval.sampling:select_calibration_points(sectors)"]
+class = "general"
+reason = "number of bearing sectors; narrow enough that one corridor dominates"
+
+["landeval.schema:SAMPLED_TABLES"]
+class = "general"
+reason = "table names and keys of the storage format"
+
+["landeval.schema:SAMPLE_ROWS"]
+class = "general"
+reason = "number of rows a contract check reads"
+
+["landeval.schema:TABLE_KEYS"]
+class = "general"
+reason = "table names and keys of the storage format"
+
+["landeval.schema:TRACKED_TABLES"]
+class = "general"
+reason = "table names and keys of the storage format"
+
+["landeval.schema:sample_of(rows)"]
+class = "general"
+reason = "number of rows a contract check reads"
+
+["landeval.smallarea:COLUMNS"]
+class = "general"
+reason = "e-Stat small-area file layout and its water-area code (standard)"
+
+["landeval.smallarea:ENCODING"]
+class = "general"
+reason = "e-Stat small-area file layout and its water-area code (standard)"
+
+["landeval.smallarea:MUNI_CODE"]
+class = "general"
+reason = "e-Stat small-area file layout and its water-area code (standard)"
+
+["landeval.smallarea:WATER_HCODE"]
+class = "general"
+reason = "e-Stat small-area file layout and its water-area code (standard)"
+
+["landeval.stability:IDENTICAL"]
+class = "general"
+reason = "verdict vocabulary"
+
+["landeval.stability:MOVES"]
+class = "general"
+reason = "verdict vocabulary"
+
+["landeval.stability:QUANTILES"]
+class = "general"
+reason = "low, middle and high quantile: the smallest set that shows a trend"
+
+["landeval.stability:REQUIRED_COLUMNS"]
+class = "general"
+reason = "input column contract"
+
+["landeval.stability:WITHIN_NOISE"]
+class = "general"
+reason = "verdict vocabulary"
+
+["landeval.stability:check_lead_time(min_lead_days)"]
+class = "general"
+reason = "lead time at which the Routes API answers from its historical model, an API behaviour"
+
+["landeval.stability:select_triples(quantiles)"]
+class = "general"
+reason = "low, middle and high quantile: the smallest set that shows a trend"
+
+["landeval.tolls:BASE_FIELD_MASK"]
+class = "general"
+reason = "Google Routes API field mask and toll option"
+
+["landeval.tolls:DEFAULT_SHAPE"]
+class = "general"
+reason = "the plain request shape: no tolls, no pass, no emission type"
+
+["landeval.tolls:KNOWN_EMISSION_TYPES"]
+class = "general"
+reason = "values the Google Routes API accepts"
+
+["landeval.tolls:KNOWN_JP_TOLL_PASSES"]
+class = "general"
+reason = "values the Google Routes API accepts"
+
+["landeval.tolls:TOLL_COMPUTATION"]
+class = "general"
+reason = "Google Routes API field mask and toll option"
+
+["landeval.tolls:TOLL_FIELDS"]
+class = "general"
+reason = "Google Routes API field mask and toll option"
+
+["landeval.tolls:_CANONICAL_UNITS"]
+class = "general"
+reason = "integer spelling of the Routes API toll units (API value)"
+
+["landeval.viz:BAND_ALPHA"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:BLOCK_COLOURS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:CLASS_COLOURS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:CLASS_LABELS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:ESTIMATE_COLOURS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:GSI_ATTRIBUTION"]
+class = "general"
+reason = "GSI tile URL and attribution text"
+
+["landeval.viz:GSI_PALE_TILES"]
+class = "general"
+reason = "GSI tile URL and attribution text"
+
+["landeval.viz:HAZARD_COLOURS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:NO_VALUE"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:NO_VALUE_TEXT"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:OFF_MAP"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:OFF_MAP_TEXT"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:READOUT_ABSENT"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:READOUT_ALPHABET"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:SELECTION_COLOURS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:SELECTION_LABELS"]
+class = "general"
+reason = "presentation colour or label"
+
+["landeval.viz:UNREADABLE"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:UNREADABLE_TEXT"]
+class = "general"
+reason = "readout vocabulary and its display text"
+
+["landeval.viz:_readout_html(levels)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:_readout_html(scale)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:_readout_html(style)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:_readout_html(unit)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(layer_title)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(mesh_size_m)"]
+class = "general"
+reason = "500 m is the mesh the stored tables use"
+
+["landeval.viz:build_map(readout_levels)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(readout_scale)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(readout_style)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(readout_title)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:build_map(readout_unit)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:rasterize(mesh_size_m)"]
+class = "general"
+reason = "500 m is the mesh the stored tables use"
+
+["landeval.viz:value_grid(levels)"]
+class = "general"
+reason = "presentation default of the click readout or layer"
+
+["landeval.viz:value_grid(mesh_size_m)"]
+class = "general"
+reason = "500 m is the mesh the stored tables use"
+
+["landeval.viz:value_grid(scale)"]
+class = "general"
+reason = "presentation default of the click readout or layer"

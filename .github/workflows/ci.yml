@@ -1,0 +1,41 @@
+name: CI
+
+# Runs the four gates on every push to main and every pull request. It uses only files of this
+# repository: the lock file, the package configuration and the tests.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # The exact release is pinned because setup-uv publishes no floating major tag, and uv is
+      # pinned so that a uv release cannot change the result without a reviewed commit.
+      - uses: astral-sh/setup-uv@v10.0.0
+        with:
+          version: "0.10.2"
+
+      # --locked fails when uv.lock disagrees with pyproject.toml.
+      - name: Install
+        run: uv sync --locked --extra dev
+
+      - name: ruff check
+        run: uv run ruff check
+
+      - name: ruff format
+        run: uv run ruff format --check
+
+      - name: mypy (strict)
+        run: uv run mypy
+
+      # -rs prints every skip and its reason.
+      - name: pytest
+        run: uv run pytest -rs
